@@ -13,7 +13,7 @@ class Home extends React.Component{
 	}
 
 	handleSubmit(event){
-		this.setState({text : event.target.value});
+		this.setState({value : event.target.value});
 		console.log(this.state.value);
 	}
 
@@ -23,7 +23,7 @@ class Home extends React.Component{
 			<h1>Header</h1>
 			<p>This is a description but you can change it using the form bellow. </p>
 			<form>
-				<input type="text" onChange={this.handleSubmit} value={this.state.value}/>
+				<input type="text" onChange={this.handleSubmit}/>
 			</form>
 
 			<p>{this.state.value}</p>
