@@ -13,6 +13,7 @@ const App = (props) => {
             <ul className="nav navbar-nav">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/books">Book</Link></li>
+              <li><Link to="/blog">Blog</Link></li>
             </ul>
           </div>
         </div>
