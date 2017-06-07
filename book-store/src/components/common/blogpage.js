@@ -21,14 +21,13 @@ class Blogpage extends React.Component{
 			<div>
 				<h3>Blog Page</h3>
 					{this.props.blogs.map((b,i) => 
-						<b><p key={i}>{b.title.title}</p></b>)}
-					{this.props.blogs.map((b,i) => 
-						<p key={i}>{b.content.content}</p>)}
-					{this.props.blogs.map((b,i) => 
-						<p key={i}> Written by {b.author.author}</p>)}
-				
+						<div key={i}>
+						<b><p>{b.title.title}</p></b>
+							<p>{b.content.content}</p>
+							<p className="outputAuthor">Written by {b.author.author}</p>
+						</div>)}
 				<div>
-				<h3>Books Form</h3>
+				<h3>Blog Form</h3>
 				<form onSubmit={e => {
 					e.preventDefault();
 
@@ -42,11 +41,11 @@ class Blogpage extends React.Component{
 					e.target.reset();
 				}}>
 					<h5>Title</h5>
-					<input type="text" name="title" ref={node => titleInput = node}/>
+					<input type="text" name="title" className="inputTitle" ref={node => titleInput = node}/>
 					<h5>Author</h5>
-					<input type="text" name="author" ref={node => authorInput = node}/>
+					<input type="text" name="author" className="inputAuthor" ref={node => authorInput = node}/>
 					<h5>Content</h5>
-					<input type="text" name="content" ref={node => contentInput = node}/>
+					<textarea rows="20" cols="50" className="inputContent" ref={node => contentInput = node} />
 					<h5></h5>
             		<input type="submit" />
           		</form>
